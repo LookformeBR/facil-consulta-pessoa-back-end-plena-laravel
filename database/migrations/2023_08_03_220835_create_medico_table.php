@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('cidade_id')->references('id')->on('cidades')->onDelete('no action');
+            $table->foreign('cidade_id')->references('id')->on('cidade')->onDelete('no action');
         });
     }
 
