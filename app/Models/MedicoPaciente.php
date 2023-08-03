@@ -18,6 +18,11 @@ class MedicoPaciente extends Model
 
     protected $table = 'medico_paciente';
 
+    protected $fillable = [
+        'medico_id',
+        'paciente_id',
+    ];
+
     public function medico(): BelongsTo
     {
         return $this->belongsTo(Medico::class);

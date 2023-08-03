@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property-read int $id
@@ -24,9 +25,6 @@ class Paciente extends Model
         'celular',
     ];
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
     public function medicoPaciente(): HasMany
     {
         return $this->hasMany(MedicoPaciente::class);
@@ -35,7 +33,7 @@ class Paciente extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function scopeMedico(Builder $query, int $id): Builder
+    public function scopeFilteredByDoctorId(Builder $query, int $id): Builder
     {
         return $query->whereHas('medicoPaciente', function (Builder $query) use ($id): void {
             $query->where('medico_id', $id);
