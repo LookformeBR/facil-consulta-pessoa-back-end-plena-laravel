@@ -34,7 +34,7 @@ class Medico extends Model
     /**
      * @return Illuminate\Database\Eloquent\Builder
      **/
-    public function scopeFilterByCity(Builder $query, int $id): Builder
+    public function scopeFilteredByCity(Builder $query, int $id): Builder
     {
         return $query->where('cidade_id', $id);
     }
@@ -42,7 +42,7 @@ class Medico extends Model
     /**
      * @return Illuminate\Database\Eloquent\Builder
      **/
-    public function scopePatients(Builder $query, int $id): Builder
+    public function scopeFilteredByPatient(Builder $query, int $id): Builder
     {
         return $query->where('paciente_id', $id);
     }
