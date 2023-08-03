@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\CidadesController;
+use App\Http\Controllers\Api\CidadeController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,8 +23,8 @@ Route::post('/refresh', [AuthController::class, 'refresh'])->name('refresh');
 Route::get('/user', [UserController::class, 'user'])->name('users')->middleware('auth:api');
 
 Route::prefix('cidades')->group(function () {
-    Route::get('/', [CidadesController::class, 'index'])->name('cidades');
-    Route::get('/{id}/medicos', [CidadesController::class, 'doctors']
+    Route::get('/', [CidadeController::class, 'index'])->name('cidades');
+    Route::get('/{id}/medicos', [CidadeController::class, 'doctors']
     )->name('cidades.listDoctorByCidadeId');
 });
 

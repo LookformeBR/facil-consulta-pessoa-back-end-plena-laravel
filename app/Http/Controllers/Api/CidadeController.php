@@ -9,7 +9,7 @@ use App\Models\Cidade;
 use App\Models\Medico;
 use Illuminate\Http\JsonResponse;
 
-class CidadesController extends Controller
+class CidadeController extends Controller
 {
     /**
      * Display a listing of the resource.
