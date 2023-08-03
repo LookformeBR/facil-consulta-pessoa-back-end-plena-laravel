@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\CompactCidadeResource;
-use App\Http\Resources\CompactMedicoResource;
+use App\Http\Resources\Cidade\CompactCidadeResource;
+use App\Http\Resources\Medico\CompactMedicoResource;
 use App\Models\Cidade;
 use App\Models\Medico;
 use Illuminate\Http\JsonResponse;
