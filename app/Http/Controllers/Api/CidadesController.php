@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Http\Resources\Cidade\CompactCidadeResource;
 use App\Http\Resources\Medico\CompactMedicoResource;
 use App\Models\Cidade;
