@@ -7,11 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * @property-read int $id
+ * @property-read int medico_id
+ * @property-read int paciente_id
+ */
 class MedicoPaciente extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'medico';
+    protected $table = 'medico_paciente';
 
     public function medico(): BelongsTo
     {

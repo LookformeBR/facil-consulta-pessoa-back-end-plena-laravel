@@ -16,10 +16,12 @@ class PacienteFactory extends Factory
      */
     public function definition(): array
     {
+        $faker = \Faker\Factory::create('pt_BR');
+
         return [
             'nome' => fake()->name(),
-            'cpf' => fake()->randomNumber(),
-            'celular' => fake()->randomNumber(),
+            'cpf' => $faker->cpf(),
+            'celular' => fake()->PhoneNumber(),
         ];
     }
 }

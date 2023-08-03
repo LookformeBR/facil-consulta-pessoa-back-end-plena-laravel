@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * @property-read int $id
+ * @property-read string nome
+ * @property-read string especialidade
+ * @property-read int cidade_id
+ */
 class Medico extends Model
 {
     use HasFactory, SoftDeletes;
@@ -22,7 +28,7 @@ class Medico extends Model
 
     public function cidade(): BelongsTo
     {
-        return $this->belongsTo(Cidades::class);
+        return $this->belongsTo(Cidade::class);
     }
 
     /**

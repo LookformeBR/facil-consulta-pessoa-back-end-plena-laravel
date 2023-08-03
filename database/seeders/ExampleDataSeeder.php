@@ -2,6 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Cidade;
+use App\Models\Medico;
+use App\Models\MedicoPaciente;
+use App\Models\Paciente;
 use Illuminate\Database\Seeder;
 
 class ExampleDataSeeder extends Seeder
@@ -19,13 +23,13 @@ class ExampleDataSeeder extends Seeder
 
     public function createCities(): void
     {
-        Cidades::factory(20)->create();
+        Cidade::factory(20)->create();
     }
 
     public function createDoctors(): void
     {
-        Cidades::all()->each(function (Cidades $cidade): void {
-            Medico::factory(10)->for($cidade, 'cidade')->create();
+        Cidade::all()->each(function (Cidade $cidade): void {
+            Medico::factory(10)->for($cidade)->create();
         });
     }
 
