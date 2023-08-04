@@ -11,7 +11,7 @@ Installar dependências e subir o container pelo sail.
 
 Rodar migrações e seeder com o sail
 
-O comando `composer fix` está disponível para o `pint``
+O comando `composer fix` está disponível para o `pint`
 
 # Usuarios Disponíveis:
 
