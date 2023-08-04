@@ -24,6 +24,7 @@ class PacienteController extends Controller
      */
     public function edit(PacienteEditRequest $request, int $id): JsonResponse
     {
+
         $paciente = Paciente::findOrFail($id);
         $paciente->update($request->validated());
 

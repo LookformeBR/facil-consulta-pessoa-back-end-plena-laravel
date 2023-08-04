@@ -43,7 +43,7 @@ class MedicoController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display a listing of the resource.
      */
     public function patients(int $id): JsonResponse
     {

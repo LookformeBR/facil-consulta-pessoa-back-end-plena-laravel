@@ -25,8 +25,8 @@ Route::post('/refresh', [AuthController::class, 'refresh'])->name('refresh');
 Route::get('/user', [UserController::class, 'user'])->name('users')->middleware('auth:api');
 
 Route::prefix('cidades')->group(function () {
-    Route::get('/', [CidadeController::class, 'index'])->name('cidades.index');
-    Route::get('/{id}/medicos', [CidadeController::class, 'doctors'])->name('cidades.doctors');
+    Route::get('/', [CidadeController::class, 'index'])->name('cidade.index');
+    Route::get('/{id}/medicos', [CidadeController::class, 'doctors'])->name('cidade.doctors');
 });
 
 Route::prefix('medicos')->group(function () {
@@ -41,7 +41,7 @@ Route::prefix('medicos')->group(function () {
 
 Route::prefix('pacientes')->group(function () {
     Route::middleware('auth:api')->group(function (): void {
-        Route::put('/{id}', [PacienteController::class, 'edit'])->name('paciente.index');
+        Route::put('/{id}', [PacienteController::class, 'edit'])->name('paciente.edit');
         Route::post('/', [PacienteController::class, 'store'])->name('paciente.store');
     });
 });
