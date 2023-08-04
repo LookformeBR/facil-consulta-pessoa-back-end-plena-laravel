@@ -10,7 +10,6 @@ use App\Http\Resources\Medico\MedicoResource;
 use App\Http\Resources\MedicoPaciente\MedicoPacienteResource;
 use App\Http\Resources\Paciente\PacienteResource;
 use App\Models\Medico;
-use App\Models\MedicoPaciente;
 use App\Models\Paciente;
 use Illuminate\Http\JsonResponse;
 
@@ -37,8 +36,10 @@ class MedicoController extends Controller
      */
     public function linkPatient(LinkPatientRequest $request, int $id): JsonResponse
     {
+        $medico = Medico::findorFail($id);
+
         return response()
-            ->json(new MedicoPacienteResource(MedicoPaciente::create($request->validated())), 201);
+            ->json(new MedicoPacienteResource($medico->medicoPaciente()->create($request->validated())), 201);
     }
 
     /**
