@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CidadeController;
 use App\Http\Controllers\Api\MedicoController;
+use App\Http\Controllers\Api\PacienteController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,4 +35,9 @@ Route::prefix('medicos')->group(function () {
     Route::post('/', [MedicoController::class, 'store'])->name('medico.store')->middleware('auth:api');
     Route::post('{id}/pacientes', [MedicoController::class, 'linkPatient'])->name('medico.linkPatient');
     Route::get('{id}/pacientes', [MedicoController::class, 'patients'])->name('medico.patients');
+});
+
+Route::prefix('pacientes')->group(function () {
+    Route::put('/{id}', [PacienteController::class, 'edit'])->name('paciente.index');
+    Route::post('/', [PacienteController::class, 'store'])->name('paciente.store');
 });
