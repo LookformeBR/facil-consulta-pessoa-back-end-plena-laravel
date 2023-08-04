@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -15,6 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property-read string especialidade
  * @property-read int cidade_id
  * @property-read Cidade $cidade
+ * @property-read MedicoPaciente $medicoPaciente
  *
  * @method static MedicoFactory factory($count = null, $state = [])
  */
@@ -33,6 +35,11 @@ class Medico extends Model
     public function cidade(): BelongsTo
     {
         return $this->belongsTo(Cidade::class);
+    }
+
+    public function medicoPaciente(): HasMany
+    {
+        return $this->hasMany(MedicoPaciente::class);
     }
 
     /**
