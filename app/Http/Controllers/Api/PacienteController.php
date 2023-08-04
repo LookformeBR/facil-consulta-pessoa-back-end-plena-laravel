@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Paciente\PacienteEditRequest;
 use App\Http\Requests\Paciente\PacienteStoreRequest;
-use App\Http\Resources\Pacient\PacienteResource;
+use App\Http\Resources\Paciente\PacienteResource;
 use App\Models\Paciente;
 use Illuminate\Http\JsonResponse;
 

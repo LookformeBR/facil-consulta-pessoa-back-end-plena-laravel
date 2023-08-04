@@ -3,17 +3,10 @@
 namespace App\Http\Requests\Paciente;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class PacienteEditRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
-    {
-        return false;
-    }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -22,7 +15,18 @@ class PacienteEditRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nome' => 'sometimes|string|max:100',
+            'cpf' => ['sometimes', 'string', 'max:20', Rule::unique('paciente')->ignore($this->cpf, 'cpf')],
+            'celular' => 'sometimes|string|max:20',
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'unique' => 'O :attribute já foi usado.',
+            'string' => 'O campo :attribute deve ser uma string',
+            'max' => 'O campo :attribute não deve ter mais de :max caracteres',
         ];
     }
 }

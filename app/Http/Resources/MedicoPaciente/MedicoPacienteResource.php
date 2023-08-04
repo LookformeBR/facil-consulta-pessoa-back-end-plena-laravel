@@ -3,7 +3,7 @@
 namespace App\Http\Resources\MedicoPaciente;
 
 use App\Http\Resources\Medico\MedicoResource;
-use App\Http\Resources\Pacient\PacienteResource;
+use App\Http\Resources\Paciente\PacienteResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 

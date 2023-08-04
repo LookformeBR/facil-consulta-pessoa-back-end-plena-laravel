@@ -8,7 +8,7 @@ use App\Http\Requests\Medico\StoreMedicoRequest;
 use App\Http\Resources\Medico\CompactMedicoResource;
 use App\Http\Resources\Medico\MedicoResource;
 use App\Http\Resources\MedicoPaciente\MedicoPacienteResource;
-use App\Http\Resources\Pacient\PacienteResource;
+use App\Http\Resources\Paciente\PacienteResource;
 use App\Models\Medico;
 use App\Models\MedicoPaciente;
 use App\Models\Paciente;
