@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Database\Factories\MedicoFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,6 +14,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property-read string nome
  * @property-read string especialidade
  * @property-read int cidade_id
+ * @property-read Cidade $cidade
+ *
+ * @method static MedicoFactory factory($count = null, $state = [])
  */
 class Medico extends Model
 {

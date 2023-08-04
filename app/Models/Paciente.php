@@ -2,16 +2,21 @@
 
 namespace App\Models;
 
+use Database\Factories\PacienteFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Collection;
 
 /**
  * @property-read int $id
  * @property-read string nome
  * @property-read string cpf
  * @property-read string celular
+ * @property-read Collection<MedicoPaciente[]> $medicoPaciente
+ *
+ * @method static PacienteFactory factory($count = null, $state = [])
  */
 class Paciente extends Model
 {
